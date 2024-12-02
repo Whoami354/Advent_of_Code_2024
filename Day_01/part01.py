@@ -7,9 +7,9 @@ left_side = []
 right_side = []
 
 for id in location_IDs:
-    numbers = id.split(" ")
+    numbers = id.split("   ")
     left_side.append(int(numbers[0]))
-    right_side.append(int(numbers[-1]))
+    right_side.append(int(numbers[1]))
 
 def solve(left_numbers, right_numbers):
     sum = 0
