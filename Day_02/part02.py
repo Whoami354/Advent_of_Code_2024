@@ -48,9 +48,7 @@ def removeSingleElementFromUnsage(arr):
 def solve(safes):
     counter = 0
     for safe in safes:
-        if allIncreasingOrAllDecreasing(safe) and differAtMostThree(safe):
-            counter += 1
-        elif removeSingleElementFromUnsage(safe):
+        if (allIncreasingOrAllDecreasing(safe) and differAtMostThree(safe)) or removeSingleElementFromUnsage(safe):
             counter += 1
 
     return counter
