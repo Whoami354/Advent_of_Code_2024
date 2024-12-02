@@ -22,7 +22,7 @@ def allIncreasingOrAllDecreasing(arr):
 
     return isIncreasing or isDecreasing
 
-def differAtMostThree(arr):
+def differenceAtLeastOneAndAtMostThree(arr):
     isMostThree = True
     for i in range(len(arr) - 1):
         differ = abs(arr[i] - arr[i + 1])
@@ -36,7 +36,7 @@ def removeSingleElementFromUnsafe(arr):
     i = 0
 
     while i < len(arr):
-        if allIncreasingOrAllDecreasing(arr[:i] + arr[i + 1:]) and differAtMostThree(arr[:i] + arr[i + 1:]):
+        if allIncreasingOrAllDecreasing(arr[:i] + arr[i + 1:]) and differenceAtLeastOneAndAtMostThree(arr[:i] + arr[i + 1:]):
             return True
 
         i += 1
@@ -46,7 +46,7 @@ def removeSingleElementFromUnsafe(arr):
 def solve(safes):
     counter = 0
     for safe in safes:
-        if (allIncreasingOrAllDecreasing(safe) and differAtMostThree(safe)) or removeSingleElementFromUnsafe(safe):
+        if (allIncreasingOrAllDecreasing(safe) and differenceAtLeastOneAndAtMostThree(safe)) or removeSingleElementFromUnsafe(safe):
             counter += 1
 
     return counter
