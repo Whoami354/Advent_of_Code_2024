@@ -19,23 +19,23 @@ def allIncreasingOrAllDecreasing(arr):
     for i in range(len(arr) - 1):
         if arr[i + 1] > arr[i]:
             isDecreasing = False
+            break
 
     return isIncreasing or isDecreasing
 
-def differAtMostThree(arr):
-    isMostThree = True
+def differenceAtLeastOneAndAtMostThree(arr):
     for i in range(len(arr) - 1):
         differ = abs(arr[i] - arr[i + 1])
         if not 1 <= differ <= 3:
-            isMostThree = False
-            break
+            return False
 
-    return isMostThree
+    return True
+
 
 def solve(safes):
     counter = 0
     for safe in safes:
-        if allIncreasingOrAllDecreasing(safe) and differAtMostThree(safe):
+        if allIncreasingOrAllDecreasing(safe) and differenceAtLeastOneAndAtMostThree(safe):
             counter += 1
 
     return counter
