@@ -9,19 +9,8 @@ for report in reports:
     safes.append(list(map(int, report.split(" "))))
 
 def allIncreasingOrAllDecreasing(arr):
-    isIncreasing = True
-    isDecreasing = True
-    for i in range(len(arr) - 1):
-        if arr[i + 1] < arr[i]:
-            isIncreasing = False
-            break
-
-    for i in range(len(arr) - 1):
-        if arr[i + 1] > arr[i]:
-            isDecreasing = False
-            break
-
-    return isIncreasing or isDecreasing
+    return all(arr[i] < arr[i + 1] for i in range(len(arr) - 1)) or \
+           all(arr[i] > arr[i + 1] for i in range(len(arr) - 1))
 
 def differenceAtLeastOneAndAtMostThree(arr):
     for i in range(len(arr) - 1):
