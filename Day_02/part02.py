@@ -36,9 +36,7 @@ def removeSingleElementFromUnsafe(arr):
     i = 0
 
     while i < len(arr):
-        newNumbers = arr[:i] + arr[i + 1:]
-
-        if allIncreasingOrAllDecreasing(newNumbers) and differAtMostThree(newNumbers):
+        if allIncreasingOrAllDecreasing(arr[:i] + arr[i + 1:]) and differAtMostThree(arr[:i] + arr[i + 1:]):
             return True
 
         i += 1
