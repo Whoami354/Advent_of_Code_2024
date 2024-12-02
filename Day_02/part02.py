@@ -32,7 +32,7 @@ def differAtMostThree(arr):
 
     return isMostThree
 
-def removeSingleElementFromUnsage(arr):
+def removeSingleElementFromUnsafe(arr):
     i = 0
 
     while i < len(arr):
@@ -48,7 +48,7 @@ def removeSingleElementFromUnsage(arr):
 def solve(safes):
     counter = 0
     for safe in safes:
-        if (allIncreasingOrAllDecreasing(safe) and differAtMostThree(safe)) or removeSingleElementFromUnsage(safe):
+        if (allIncreasingOrAllDecreasing(safe) and differAtMostThree(safe)) or removeSingleElementFromUnsafe(safe):
             counter += 1
 
     return counter
