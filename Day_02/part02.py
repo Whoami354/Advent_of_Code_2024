@@ -13,12 +13,7 @@ def allIncreasingOrAllDecreasing(arr):
            all(arr[i] > arr[i + 1] for i in range(len(arr) - 1))
 
 def differenceAtLeastOneAndAtMostThree(arr):
-    for i in range(len(arr) - 1):
-        differ = abs(arr[i] - arr[i + 1])
-        if not 1 <= differ <= 3:
-            return False
-
-    return True
+    return all(1 <= abs(arr[i] - arr[i + 1]) <= 3 for i in range(len(arr) - 1))
 
 def removeSingleElementFromUnsafe(arr):
     i = 0
