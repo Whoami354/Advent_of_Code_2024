@@ -20,7 +20,6 @@ def differenceAtLeastOneAndAtMostThree(arr):
 
     return True
 
-
 def solve(safes):
     counter = 0
     for safe in safes:
