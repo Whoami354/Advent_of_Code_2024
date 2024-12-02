@@ -34,7 +34,8 @@ def removeSingleElementFromUnsafe(arr):
 def solve(safes):
     counter = 0
     for safe in safes:
-        if (allIncreasingOrAllDecreasing(safe) and differenceAtLeastOneAndAtMostThree(safe)) or removeSingleElementFromUnsafe(safe):
+        if (allIncreasingOrAllDecreasing(safe) and differenceAtLeastOneAndAtMostThree(safe)) or \
+                removeSingleElementFromUnsafe(safe):
             counter += 1
 
     return counter
