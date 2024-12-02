@@ -16,15 +16,11 @@ def differenceAtLeastOneAndAtMostThree(arr):
     return all(1 <= abs(arr[i] - arr[i + 1]) <= 3 for i in range(len(arr) - 1))
 
 def removeSingleElementFromUnsafe(arr):
-    i = 0
-
-    while i < len(arr):
-        if allIncreasingOrAllDecreasing(arr[:i] + arr[i + 1:]) and differenceAtLeastOneAndAtMostThree(arr[:i] + arr[i + 1:]):
-            return True
-
-        i += 1
-
-    return False
+    return any(
+        allIncreasingOrAllDecreasing(arr[:i] + arr[i + 1:]) and
+        differenceAtLeastOneAndAtMostThree(arr[:i] + arr[i + 1:])
+        for i in range(len(arr))
+    )
 
 def solve(safes):
     counter = 0
