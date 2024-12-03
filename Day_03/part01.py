@@ -6,7 +6,6 @@ with open("input.txt", "r") as lines:
     numbers = lines.read()
 
 matches = re.findall(r"mul\(\d+,\d+\)", numbers)
-mulNums = []
 sum = 0
 
 for match in matches:
