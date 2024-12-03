@@ -7,7 +7,6 @@ with open("input.txt", "r") as lines:
 
 matches = re.findall(r"mul\((\d+),(\d+)\)|(do\(\))|(don\'t\(\))", numbers)
 
-mulNums = []
 sum = 0
 state = True
 
