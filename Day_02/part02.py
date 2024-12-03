@@ -8,12 +8,15 @@ safes = []
 for report in reports:
     safes.append(list(map(int, report.split(" "))))
 
+
 def allIncreasingOrAllDecreasing(arr):
     return all(arr[i] < arr[i + 1] for i in range(len(arr) - 1)) or \
-           all(arr[i] > arr[i + 1] for i in range(len(arr) - 1))
+        all(arr[i] > arr[i + 1] for i in range(len(arr) - 1))
+
 
 def differenceAtLeastOneAndAtMostThree(arr):
     return all(1 <= abs(arr[i] - arr[i + 1]) <= 3 for i in range(len(arr) - 1))
+
 
 def removeSingleElementFromUnsafe(arr):
     return any(
@@ -21,6 +24,7 @@ def removeSingleElementFromUnsafe(arr):
         differenceAtLeastOneAndAtMostThree(arr[:i] + arr[i + 1:])
         for i in range(len(arr))
     )
+
 
 def solve(safes):
     counter = 0

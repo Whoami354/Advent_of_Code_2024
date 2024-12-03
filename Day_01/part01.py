@@ -11,6 +11,7 @@ for id in location_IDs:
     left_side.append(int(numbers[0]))
     right_side.append(int(numbers[1]))
 
+
 def solve(left_numbers, right_numbers):
     sum = 0
 
@@ -24,5 +25,6 @@ def solve(left_numbers, right_numbers):
         right_numbers.remove(min_right)
 
     return sum
+
 
 print(solve(left_side, right_side))
