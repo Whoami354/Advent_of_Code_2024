@@ -31,7 +31,6 @@ def fix_update(rules, update):
 
     return ordered_keys
 
-
 add_up = 0
 
 for update in updates:
