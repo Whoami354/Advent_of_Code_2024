@@ -29,7 +29,6 @@ def check_for_loop():
             y += dy
             x += dx
 
-
 part2 = 0
 for ro in range(num_rows):
     for co in range(num_cols):
