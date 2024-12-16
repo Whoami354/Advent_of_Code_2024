@@ -8,8 +8,6 @@ def check_possible(target: int, nums: list[int]) -> bool:
         return target == nums[0]
 
     num = nums.pop()
-    target_str = str(target)
-    num_str = str(num)
 
     if target / num == target // num:
         if check_possible(target // num, nums[:]):
@@ -17,6 +15,9 @@ def check_possible(target: int, nums: list[int]) -> bool:
     if target - num >= 0:
         if check_possible(target - num, nums[:]):
             return True
+
+    target_str = str(target)
+    num_str = str(num)
 
     if target_str.endswith(num_str) and len(target_str) > len(num_str):
         new_target = int(target_str[: -len(num_str)])
