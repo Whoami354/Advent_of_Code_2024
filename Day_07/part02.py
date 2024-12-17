@@ -9,7 +9,7 @@ def check_possible(target: int, nums: list[int]) -> bool:
 
     num = nums.pop()
 
-    if target / num == target // num:
+    if target % num == 0:
         if check_possible(target // num, nums[:]):
             return True
     if target - num >= 0:
