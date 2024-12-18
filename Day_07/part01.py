@@ -8,6 +8,7 @@ def check_possible(target: int, nums: list[int]) -> bool:
         return target == nums[0]
 
     num = nums.pop()
+
     if target % num == 0:
         if check_possible(target // num, nums[:]):
             return True
