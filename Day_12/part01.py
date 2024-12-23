@@ -45,8 +45,6 @@ for r in range(num_rows):
                     seen.add((nr, nc))
         regions.append(region)
 
-
-
 part1 = sum(len(r) * perimeter(r) for r in regions)
 print(part1)
 
