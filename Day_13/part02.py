@@ -28,8 +28,3 @@ for puzzle in puzzles:
     part2 += a * 3 + b
 
 print(part2)
-
-
-
-
-
