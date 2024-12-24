@@ -20,5 +20,4 @@ def solve(left_numbers, right_numbers):
 
     return sum
 
-
 print(solve(left_side, right_side))
