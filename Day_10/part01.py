@@ -15,17 +15,17 @@ def count_trails(r: int, c: int):
 
     while queue:
         r, c = queue.popleft()
-        if grid[r][c] == 9:
+        if not grid[r][c] == 9:
+            for dr, dc in [(-1, 0), (0, -1), (1, 0), (0, 1)]:
+                nr, nc = r + dr, c + dc
+                if 0 <= nr < rows and 0 <= nc < cols and grid[r][c] + 1 == grid[nr][nc]:
+                    queue.append((nr, nc))
+        else:
             summits.add((r, c))
-            continue
-        for dr, dc in [(-1, 0), (0, -1), (1, 0), (0, 1)]:
-            nr, nc = r + dr, c + dc
-            if 0 <= nr < rows and 0 <= nc < cols and grid[r][c] + 1 == grid[nr][nc]:
-                queue.append((nr, nc))
+
     return len(summits)
 
 trails = 0
-
 for start in zeros:
     trails += count_trails(*start)
 
