@@ -3,14 +3,8 @@ with open("input.txt", "r") as lines:
     # Zum Beispiel: Daten lesen, schreiben oder verarbeiten
     location_IDs = lines.read().split("\n")
 
-left_side = []
-right_side = []
-
-for id in location_IDs:
-    numbers = id.split("   ")
-    left_side.append(int(numbers[0]))
-    right_side.append(int(numbers[1]))
-
+left_side = [int(number.split("   ")[0]) for number in location_IDs]
+right_side = [int(number.split("   ")[1]) for number in location_IDs]
 
 def solve(left_numbers, right_numbers):
     sum = 0
